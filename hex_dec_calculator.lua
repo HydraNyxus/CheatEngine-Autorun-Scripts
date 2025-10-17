@@ -101,14 +101,14 @@ do
     f.Caption = calculator.menuItemCaption
     f.Name = 'frmHexDecCalculator'
     f.Width = 320
-    f.Height = 220 -- [MODIFIED] Reduced height slightly as button is gone.
+    f.Height = 220 -- Reduced height slightly as button is gone.
     f.BorderStyle = 'bsSingle'
     f.Position = 'poScreenCenter'
 
     -- Panel 1: Top section for input
     local pnlTop = createPanel(f)
     pnlTop.Align = 'alTop'
-    pnlTop.Height = 65 -- [MODIFIED] Reduced height.
+    pnlTop.Height = 65 -- Reduced height.
     pnlTop.BevelOuter = 'bvNone'
 
     local lblInfo = createLabel(pnlTop)
@@ -145,7 +145,7 @@ do
 
     -- Event Handlers
     f.OnClose = function() return caHide end
-    -- [MODIFIED] Switched to OnChange for real-time updates.
+    -- Switched to OnChange for real-time updates.
     calculator.editBox.OnChange = performConversion
     btnCopyHex.OnClick = function() copyResult('Hex') end
     btnCopyDec.OnClick = function() copyResult('Decimal') end
@@ -185,4 +185,5 @@ do
   local ownerForm = createForm(false)
   ownerForm.Name = 'frmHexDecCalcOwner'
   calculator.form.Owner = ownerForm
+
 end
